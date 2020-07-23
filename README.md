@@ -33,7 +33,7 @@ rem VRChat.exe %2
 
 @echo off
 
-"C:\Program Files\vrc-invite-me\vrc-invite-me.exe"
+"C:\Program Files\vrc-invite-me\vrc-invite-me.exe" %2
 
 if not %ERRORLEVEL% == 0 (
     pause

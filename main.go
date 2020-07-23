@@ -80,8 +80,8 @@ func readConfigure() Configure {
 }
 
 func parseVRChatLink(link string) (string, error) {
-	if !strings.HasPrefix(link, "vrchat://launch?") {
-		return "", errors.New("link is not vrchat://launch? link")
+	if !strings.HasPrefix(link, "vrchat://launch") {
+		return "", errors.New("link is not vrchat://launch link")
 	}
 
 	params := strings.SplitN(link, "?", 2)[1]

@@ -24,7 +24,7 @@ type RequestInvitePayload struct {
 }
 
 type Configure struct {
-	ApiKey		string	`yaml:"apiKey" validate:"required,len=32"`
+	ApiKey		string	`yaml:"apiKey" validate:"required,len=32,alphanum"`
 	Auth		string	`yaml:"auth" validate:"required,is-auth"`
 }
 
@@ -150,6 +150,8 @@ func main() {
 	logrus.SetFormatter(&logrus.TextFormatter{ForceColors: true})
 	logrus.SetOutput(colorable.NewColorableStdout())
 
+	c := readConfigure()
+
 	flag.Parse()
 	args := flag.Args()
 
@@ -157,8 +159,6 @@ func main() {
 		printUsage()
 		logrus.Fatal("Illegal argument(s) count.")
 	}
-
-	c := readConfigure()
 
 	id, err := parseVRChatLink(args[0])
 

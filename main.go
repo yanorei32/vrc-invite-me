@@ -84,9 +84,13 @@ func parseVRChatLink(link string) (string, error) {
 		return "", errors.New("link is not vrchat://launch link")
 	}
 
-	params := strings.SplitN(link, "?", 2)[1]
+	splittedLink := strings.SplitN(link, "?", 2)
 
-	for _, param := range strings.Split(params, "&") {
+	if len(splittedLink) != 2 {
+		return "", errors.New("link is valid vrchat://launch link")
+	}
+
+	for _, param := range strings.Split(splittedLink[1], "&") {
 		parsedParam := strings.SplitN(param, "=", 2)
 
 		if len(parsedParam) != 2 {

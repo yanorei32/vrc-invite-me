@@ -7,7 +7,11 @@ Ex: `C:\Program Files\vrc-invite-me\vrc-invite-me.exe`
 
 ### Write configure.yml and save application directory
 
-#### Get cookie by your browser
+#### Get cookie by your browser (simplify)
+
+Install https://github.com/Yanorei32/VRCCredentialViewer
+
+#### Get cookie by your browser (legacy)
 
 ![image](https://user-images.githubusercontent.com/11992915/88283162-df2d6680-cd25-11ea-8faa-54b680c45317.png)
 
